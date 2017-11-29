@@ -3,6 +3,25 @@ cd "$(dirname "$0")"
 
 BASEDIR=$PWD
 
+while getopts "h?:" opt; do
+    case "$opt" in
+    h|\?)
+        echo '
+# requires git and packer
+brew install packer git
+
+# clone this repository
+git clone https://github.com/Artistan/homestead-builder.git ~/homestead-builder
+cd ~/homestead-builder
+
+# run a build for a new image. (auto clones
+./homestead.image.sh [optional custom-repo/folder]
+        '
+        exit 0
+        ;;
+    esac
+done
+
 echo "** track the build? **"
 echo "tail -f ${BASEDIR}/build.txt"
 echo "** this is going to take awhile **"
@@ -33,13 +52,13 @@ if which packer >/dev/null; then
             echo "now building the $1 box"
             cd "${BASEDIR}/$1"
             rm -f virtualbox.box > /dev/null
-            ./build.sh
+            ./build.sh > "${BASEDIR}/build.txt"
             vagrant box add --force $1 "file://localhost${BASEDIR}/$1/virtualbox.box"
           else
             echo "now building the homestead box"
             cd ${BASEDIR}/settler/virtualbox
             rm -f virtualbox.box > /dev/null
-            ./build.sh
+            ./build.sh > "${BASEDIR}/build.txt"
             vagrant box add --force custom-homestead "file://localhost${BASEDIR}/settler/virtualbox/virtualbox.box"
         fi
 	else
