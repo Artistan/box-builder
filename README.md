@@ -8,8 +8,13 @@ Suggestions welcome!
 
 ## Install
 ```bash
-# requires git and packer
+# requires basic virtualization stuff...
 brew install packer git
+brew cask install vagrant
+brew cask virtualbox-extension-pack
+vagrant plugin install vagrant-bindfs
+vagrant plugin install vagrant-hostsupdater
+vagrant plugin install vagrant-vbguest
 
 # clone this repository
 git clone https://github.com/Artistan/homestead-builder.git ~/homestead-builder
@@ -17,6 +22,7 @@ cd ~/homestead-builder
 
 # run a build for a new image. (auto clones repos) Forces both boxes to build
 ./homestead.image.sh [optional custom-repo/folder]
+
 ```
 
 ####updated to allow just rebuilding one of the boxes
