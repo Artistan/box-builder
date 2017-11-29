@@ -23,6 +23,7 @@ if which packer >/dev/null; then
 		fi
 	    sed -i '' 's|bento/ubuntu-16.04|custom-bento|' "${BASEDIR}/settler/virtualbox/Vagrantfile"
 		cd ${BASEDIR}/bento/ubuntu/
+		rm -rf "${BASEDIR}/bento/builds/ubuntu-16.04.virtualbox.box" > /dev/null
 		echo "<---<--- if virtualbox pops up, do not touch it --->--->"
 		packer build -only=virtualbox-iso ubuntu-16.04-amd64.json > "${BASEDIR}/build.txt"
 		vagrant box add --force custom-bento "file://localhost${BASEDIR}/bento/builds/ubuntu-16.04.virtualbox.box"
@@ -31,11 +32,13 @@ if which packer >/dev/null; then
           then
             echo "now building the $1 box"
             cd "${BASEDIR}/$1"
+            rm -f virtualbox.box > /dev/null
             ./build.sh
             vagrant box add --force $1 "file://localhost${BASEDIR}/$1/virtualbox.box"
           else
             echo "now building the homestead box"
             cd ${BASEDIR}/settler/virtualbox
+            rm -f virtualbox.box > /dev/null
             ./build.sh
             vagrant box add --force custom-homestead "file://localhost${BASEDIR}/settler/virtualbox/virtualbox.box"
         fi
