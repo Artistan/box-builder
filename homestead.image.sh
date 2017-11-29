@@ -27,19 +27,18 @@ if which packer >/dev/null; then
 		packer build -only=virtualbox-iso ubuntu-16.04-amd64.json > "${BASEDIR}/build.txt"
 		vagrant box add --force custom-bento "file://localhost${BASEDIR}/bento/builds/ubuntu-16.04.virtualbox.box"
 		#if supplied a repo to build from, then use that one.
-        if [ -d "${BASEDIR}/$1" ]
+        if [ -f "${BASEDIR}/$1/build.sh" ]
           then
             echo "now building the $1 box"
-            cd "${BASEDIR}/$1/virtualbox"
+            cd "${BASEDIR}/$1"
             ./build.sh
-            vagrant box add --force custom-homestead "file://localhost${BASEDIR}/$1/virtualbox/virtualbox.box"
+            vagrant box add --force $1 "file://localhost${BASEDIR}/$1/virtualbox.box"
           else
             echo "now building the homestead box"
             cd ${BASEDIR}/settler/virtualbox
             ./build.sh
             vagrant box add --force custom-homestead "file://localhost${BASEDIR}/settler/virtualbox/virtualbox.box"
         fi
-
 	else
 	    echo "git is needed to download the repos."
 	fi
