@@ -1,3 +1,5 @@
+## this needs updated since settler changed how they are building
+
 # Homestead Builder
 ### make your own image!
 [![GitHub release](https://img.shields.io/github/release/Artistan/homstead-builder.svg)](https://github.com/Artistan/homstead-builder/releases)
