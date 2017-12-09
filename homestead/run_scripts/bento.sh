@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"; cd $DIR;
 # check if git is available.
 if which git >/dev/null; then
-    cd ..
+    cd ../..
     if [ -d "./bento" ]
       then
         echo "git repo chef/bento exists"

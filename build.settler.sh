@@ -11,7 +11,6 @@ if [ -f ~/.vagrant.d/boxes/custom-bento/0/virtualbox/Vagrantfile ]
     ./build.bento.sh
 fi
 
-
 if which vagrant >/dev/null; then
     if which VirtualBox >/dev/null; then
         if which git >/dev/null; then

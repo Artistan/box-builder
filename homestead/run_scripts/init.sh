@@ -8,9 +8,5 @@ BENTO_DIR=".."
 UBUNTU_DIR="../ubuntu"
 CURRENT_DIR="./"
 ORIGINAL_DIR="../../homestead"
-# http
-ln -s "$UBUNTU_DIR/http" "$CURRENT_DIR/http"
-# scripts
-ln -s "$UBUNTU_DIR/scripts" "$CURRENT_DIR/scripts"
-# build dir
-cd "$NEW_DIR"
+# move to the build dir
+cd "../../bento/homestead"
