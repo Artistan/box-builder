@@ -23,8 +23,7 @@ export pack_box="$1"
 
 run_scripts/copy.json.sh "$pack_box"
 
-echo "did it stop?"
-#run_scripts/packer.sh "$pack_box"
+run_scripts/packer.sh "$pack_box"
 
 echo "sync back to homestead dir"
 source run_scripts/finish.sh

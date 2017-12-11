@@ -40,8 +40,8 @@ if which vagrant >/dev/null; then
     if which VirtualBox >/dev/null; then
         if which packer >/dev/null; then
             if which git >/dev/null; then
-                build.box.sh
-                ./build.settler.sh
+                cd homestead
+                ./pack.sh "$1"
             else
                 echo "git is needed to download the repos."
             fi
