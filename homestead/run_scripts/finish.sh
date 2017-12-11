@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mv "$CURRENT_DIR" "$ORIGINAL_DIR"
+rsync -a -v --ignore-existing "$CURRENT_DIR" "$BASEDIR";
 cd "$CURRENT_DIR"

@@ -7,6 +7,8 @@ if which git >/dev/null; then
     if [ -d "./bento" ]
       then
         echo "git repo chef/bento exists"
+        cd bento
+        git pull
       else
         git clone https://github.com/chef/bento.git
     fi

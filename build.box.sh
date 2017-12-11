@@ -20,18 +20,12 @@ git clone https://github.com/Artistan/homestead-builder.git ~/homestead-builder
 cd ~/homestead-builder
 
 # run a build for a new image. (auto clones repos) Forces both boxes to build
-./homestead.image.sh [optional custom-repo/folder]
+./build.box.sh homestead
 
 ---------------------- OR ----------------------
 
-# build settler / homestead box and use existing bento box if it is there
-./build.settler.sh [optional custom-repo/folder]
-
-# bento - just build your bento box again.
-./build.bento.sh
-
-# custom-repo/folder must contain the build.sh script
-# example: artistan/virtualbox-elastic-plus
+# build a different named box, see homestead/configs/README.md
+./build.box.sh redis
         '
         exit 0
         ;;
