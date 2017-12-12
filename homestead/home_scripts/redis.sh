@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # main packages needed.
-sudo apt-get --assume-yes install wget htop mytop zsh jq pip
+sudo apt-get --assume-yes install wget htop mytop zsh jq
 
 sudo apt-get --assume-yes install htop
 sudo apt-get --assume-yes install mytop
