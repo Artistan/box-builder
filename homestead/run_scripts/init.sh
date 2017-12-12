@@ -8,7 +8,7 @@ export ORIGINAL_DIR="$PWD"
 cd ..
 export BASEDIR="$PWD"
 # move into bento so the script locations are accurate
-rsync -a -v "./homestead" "./bento";
+rsync -a -v --exclude='.git/' "./homestead" "./bento";
 # bento checkout dir
 cd bento
 export BENTO_DIR="$PWD"

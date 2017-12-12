@@ -1,4 +1,5 @@
 #!/bin/bash
 
-rsync -a -v --ignore-existing "$CURRENT_DIR" "$BASEDIR";
+# dont want to overwrite
+rsync -a -v --ignore-existing --exclude='.git/' "$CURRENT_DIR" "$BASEDIR";
 cd "$CURRENT_DIR"
