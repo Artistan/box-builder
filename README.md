@@ -1,7 +1,7 @@
 
 # Box Builder [including Homestead Settler box]
 ### make your own image!
-[![GitHub release](https://img.shields.io/github/release/Artistan/homstead-builder.svg)](https://github.com/Artistan/homstead-builder/releases)
+[![GitHub release](https://img.shields.io/github/release/Artistan/box-builder.svg)](https://github.com/Artistan/box-builder/releases)
 
 Create your own image quickly by just checking out this repo and running
 
