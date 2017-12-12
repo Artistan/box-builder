@@ -1,5 +1,5 @@
 
-# Box Builder [including Homestead]
+# Box Builder [including Homestead Settler box]
 ### make your own image!
 [![GitHub release](https://img.shields.io/github/release/Artistan/homstead-builder.svg)](https://github.com/Artistan/homstead-builder/releases)
 
@@ -47,13 +47,22 @@ cd ~/homestead-builder
 
 running this will build a vagrant box into the bento/builds directory and add it to your local vagrant boxes.
 
+###  Using with [Homestead](https://laravel.com/docs/5.5/homestead)
+
+Just add these lines to your [`Homestead.yaml`](https://github.com/laravel/homestead) file to use your customized local box
+
+```
+box: "homestead"
+version: ">= 0"
+```
+
 ## Where to customize
 
 If the git repos are already downloaded, you can customize the scripts and then run the builds again.
 
-Add new boxes in ./homestead/configs/{boxname}
+Add new boxes in `./homestead/configs/{boxname}`
 
-@see ./homestead/configs/Readme.md
+[@see](https://github.com/Artistan/box-builder/tree/master/homestead/configs) `./homestead/configs/Readme.md`
 
 #### Homestead updates
 
