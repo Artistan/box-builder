@@ -10,7 +10,6 @@ apt-get update
 apt-get -y upgrade
 
 # Force Locale
-
 echo "LC_ALL=en_US.UTF-8" >> /etc/default/locale
 locale-gen en_US.UTF-8
 
@@ -21,6 +20,7 @@ apt-get install -y software-properties-common curl
 apt-add-repository ppa:nginx/development -y
 apt-add-repository ppa:chris-lea/redis-server -y
 apt-add-repository ppa:ondrej/php -y
+apt-get --assume-yes install wget
 
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
@@ -320,6 +320,9 @@ service mysql restart
 # Add Timezone Support To MySQL
 
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql --user=root --password=secret mysql
+
+# install top for mysql
+sudo apt-get --assume-yes install mytop
 
 # Install Postgres
 
