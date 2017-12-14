@@ -1,3 +1,5 @@
 homestead.sh
 redis.sh
 powerline.sh
+dotfiles.sh
+final.sh

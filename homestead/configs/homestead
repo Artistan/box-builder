@@ -1,2 +1,6 @@
 homestead.sh
+memcached.sh
 powerline.sh
+dotfiles.sh
+xdebug.sh
+final.sh
