@@ -21,6 +21,7 @@ apt-add-repository ppa:nginx/development -y
 apt-add-repository ppa:chris-lea/redis-server -y
 apt-add-repository ppa:ondrej/php -y
 apt-get --assume-yes install wget
+apt-get --assume-yes install bindfs
 
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
